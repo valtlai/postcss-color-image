@@ -1,0 +1,20 @@
+.values {
+	background: linear-gradient(red, red);
+	background: linear-gradient(currentcolor, currentcolor);
+	background: linear-gradient(LinkText, LinkText);
+	background: linear-gradient(#ffdd0088, #ffdd0088);
+	background: linear-gradient(rgb(255 0 0 / 50%), rgb(255 0 0 / 50%));
+	background: linear-gradient(hsla(0, 100%, 50%, 0.5), hsla(0, 100%, 50%, 0.5));
+	background: linear-gradient(lab(70% 100 210), lab(70% 100 210));
+}
+
+.case-insensitivity {
+	background: linear-gradient(RGB(255 0 0), RGB(255 0 0));
+	background: linear-gradient(DarkRed, DarkRed);
+}
+
+.as-part {
+	background: green linear-gradient(orange, orange);
+	background: linear-gradient(pink, pink), linear-gradient(blue, blue);
+	background: cross-fade(linear-gradient(white, white) 25%, url(img.jpg) 75%);
+}

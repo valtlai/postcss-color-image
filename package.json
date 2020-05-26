@@ -1,0 +1,53 @@
+{
+	"name": "postcss-color-image",
+	"version": "1.0.0",
+	"description": "Use a solid color as an image in CSS",
+	"author": "Valtteri Laitinen <dev@valtlai.fi>",
+	"license": "MIT",
+	"repository": "https://github.com/valtlai/postcss-color-image",
+	"main": "src/index.js",
+	"files": [
+		"src"
+	],
+	"scripts": {
+		"lint": "eslint .",
+		"tape": "postcss-tape",
+		"test": "npm run lint && npm run tape"
+	},
+	"engines": {
+		"node": ">=12"
+	},
+	"dependencies": {
+		"postcss": "^7.0.30",
+		"postcss-value-parser": "^4.1.0"
+	},
+	"devDependencies": {
+		"@valtlai/eslint-config": "^0.2.0",
+		"eslint": "^7.1.0",
+		"postcss-tape": "^5.0.2"
+	},
+	"eslintConfig": {
+		"root": true,
+		"ignorePatterns": "!.*",
+		"env": {
+			"es6": true,
+			"node": true
+		},
+		"extends": "@valtlai"
+	},
+	"keywords": [
+		"postcss-plugin",
+		"css",
+		"image",
+		"color",
+		"solid color",
+		"function",
+		"syntax",
+		"syntactic sugar",
+		"polyfill",
+		"spec",
+		"specification",
+		"csswg",
+		"w3c"
+	]
+}
