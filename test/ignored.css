@@ -1,6 +1,0 @@
-.ignored-values {
-	background: image(notcolor);
-	background: image(rgb);
-	background: image('foo.png');
-	background: image('dark.png', black);
-}

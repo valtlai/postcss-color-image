@@ -10,9 +10,7 @@
 		"src"
 	],
 	"scripts": {
-		"lint": "eslint .",
-		"tape": "postcss-tape",
-		"test": "npm run lint && npm run tape"
+		"test": "jest && eslint ."
 	},
 	"engines": {
 		"node": "^10 || ^12 || >=14"
@@ -25,8 +23,8 @@
 		"eslint": "~7.9.0",
 		"eslint-plugin-node": "~11.1.0",
 		"eslint-plugin-unicorn": "~21.0.0",
-		"postcss": "^8.0.5",
-		"postcss-tape": "^5.0.2"
+		"jest": "^26.4.2",
+		"postcss": "^8.0.5"
 	},
 	"peerDependencies": {
 		"postcss": "^8.0.5"
