@@ -24,7 +24,7 @@ specification.
 Add the package in your project:
 
 ```sh
-npm install postcss-color-image --save-dev
+npm install postcss postcss-color-image --save-dev
 ```
 
 Use it as a PostCSS plugin
