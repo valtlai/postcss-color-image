@@ -10,7 +10,8 @@
 		"src"
 	],
 	"scripts": {
-		"test": "jest && eslint ."
+		"test": "jest && eslint .",
+		"reset": "rm -rf node_modules package-lock.json && npm i"
 	},
 	"engines": {
 		"node": "^10 || ^12 || >=14"
