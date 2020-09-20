@@ -10,10 +10,16 @@ jobs:
   test:
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os:
+          - label: Linux
+            key: ubuntu-latest
+          - label: Mac
+            key: macos-latest
+          - label: Windows
+            key: windows-latest
         node: [10, 12, 14]
-    name: Node ${{ matrix.node }} on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+    name: Node ${{ matrix.node }} on ${{ matrix.os.label }}
+    runs-on: ${{ matrix.os.key }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
