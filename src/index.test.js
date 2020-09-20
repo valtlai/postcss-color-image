@@ -1,23 +1,23 @@
-/* globals expect, it */
 'use strict';
 
+const test = require('ava');
 const postcss = require('postcss');
 const plugin = require('.');
 
-async function run (input, output, opts = {}) {
+async function run (t, input, output, opts = {}) {
 	const result = await postcss([plugin(opts)]).process(input, { from: null });
-	expect(result.css).toEqual(output);
-	expect(result.warnings()).toHaveLength(0);
+	t.is(result.css, output);
+	t.is(result.warnings().length, 0);
 }
 
 // Supported values
 
-it('supports color keyword', () => run(
+test('supports color keyword', run,
 	'x { --y: image(transparent) }',
 	'x { --y: linear-gradient(transparent, transparent) }'
-));
+);
 
-it('supports color functions', () => run(
+test('supports color functions', run,
 	`x {
 		--y: image(rgb(255,0,0));
 		--z: image(hsl(0deg 100% 50% / 0.5));
@@ -26,9 +26,9 @@ it('supports color functions', () => run(
 		--y: linear-gradient(rgb(255,0,0), rgb(255,0,0));
 		--z: linear-gradient(hsl(0deg 100% 50% / 0.5), hsl(0deg 100% 50% / 0.5));
 	}`
-));
+);
 
-it('supports hex colors', () => run(
+test('supports hex colors', run,
 	`x {
 		--y: image(#ddd);
 		--z: image(#ddd8);
@@ -41,9 +41,9 @@ it('supports hex colors', () => run(
 		--i: linear-gradient(#ff22ee, #ff22ee);
 		--j: linear-gradient(#ff22ee77, #ff22ee77);
 	}`
-));
+);
 
-it('supports within other tokens', () => run(
+test('supports within other tokens', run,
 	`x {
 		background: green image(orange);
 		background: image(pink), image(blue);
@@ -54,23 +54,23 @@ it('supports within other tokens', () => run(
 		background: linear-gradient(pink, pink), linear-gradient(blue, blue);
 		background: cross-fade(linear-gradient(white, white) 25%, url(img.jpg) 75%);
 	}`
-));
+);
 
-it('supports case-insensitivity', () => run(
+test('supports case-insensitivity', run,
 	'x { --y: image(RGB(255,0,0)); --z: image(LinkText) }',
 	'x { --y: linear-gradient(RGB(255,0,0), RGB(255,0,0)); --z: linear-gradient(LinkText, LinkText) }',
-));
+);
 
 // Ignored values
 
-it('ignores non-lowercase `image` function', () => run(
+test('ignores non-lowercase `image` function', run,
 	'x { --y: Image(red) }',
 	'x { --y: Image(red) }'
-));
+);
 
-it('ignores invalid values', () => run(
+test('ignores invalid values', run,
 	`x { --i: image(notcolor); --j: image(rgb); --k: #22; --f: #55555;
 		--g: image('foo.png'); --e: image(red, blue); }`,
 	`x { --i: image(notcolor); --j: image(rgb); --k: #22; --f: #55555;
 		--g: image('foo.png'); --e: image(red, blue); }`
-));
+);
