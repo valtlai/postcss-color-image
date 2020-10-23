@@ -1,5 +1,8 @@
 # Changelog
 
+## [2.0.2] (2020-10-23)
+* Fixed the `postcss` peer dependency to `^8.0.0`
+
 ## [2.0.1] (2020-09-22)
 * Removed the development fields from `package.json` before publishing
 
@@ -14,6 +17,7 @@
 ## [1.0.0] (2020-05-26)
 * Initial release
 
+[2.0.2]: https://github.com/valtlai/postcss-color-image/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/valtlai/postcss-color-image/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/valtlai/postcss-color-image/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/valtlai/postcss-color-image/releases/tag/v1.0.0
