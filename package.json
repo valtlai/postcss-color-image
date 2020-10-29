@@ -6,13 +6,9 @@
 	"license": "MIT",
 	"repository": "valtlai/postcss-color-image",
 	"main": "src/index.js",
-	"files": [
-		"src",
-		"!**/*.test.js"
-	],
 	"scripts": {
 		"test": "ava && eslint .",
-		"prepack": "node prepack"
+		"prepack": "node .prepack"
 	},
 	"engines": {
 		"node": "^10 || ^12 || >=14"
