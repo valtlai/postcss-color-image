@@ -2,7 +2,7 @@
 
 const { functions, keywords } = require('./colors.json');
 
-const hexRE = /^#(?:[a-f\d]{3,4}|[a-f\d]{6}|[a-f\d]{8})$/;
+const hexRE = /^#(?:[a-f\d]{3,4}|[a-f\d]{6}|[a-f\d]{8})$/u;
 
 module.exports = (node) => {
 	const val = node.value.toLowerCase();
