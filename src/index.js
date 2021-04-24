@@ -7,7 +7,7 @@ const isColor = require('./is-color');
 module.exports = () => {
 	return {
 		postcssPlugin,
-		Declaration (decl) {
+		Declaration(decl) {
 			if (!decl.value.includes('image(')) return; // skip useless parsing
 
 			const val = parseValue(decl.value);
