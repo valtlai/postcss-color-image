@@ -12,6 +12,9 @@ exports.colorFunctions = [
   "lch",
   "color",
   "device-cmyk",
+  "color-mix",
+  "color-contrast",
+  "color-adjust",
 ];
 
 exports.colorWords = [

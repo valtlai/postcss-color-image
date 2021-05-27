@@ -10,6 +10,9 @@ export const colorFunctions = [
   "lch",
   "color",
   "device-cmyk",
+  "color-mix",
+  "color-contrast",
+  "color-adjust",
 ];
 
 export const colorWords = [
