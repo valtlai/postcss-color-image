@@ -1,38 +1,48 @@
 # PostCSS Solid-Color Image [<img src="https://api.postcss.org/logo.svg" alt="PostCSS" width="90" height="90" align="right">](https://github.com/postcss/postcss)
 
-[![NPM](https://img.shields.io/npm/v/postcss-color-image.svg)](https://www.npmjs.com/package/postcss-color-image)
-[![License](https://img.shields.io/npm/l/postcss-color-image.svg)](LICENSE)
-
 This PostCSS plugin lets you use a solid color as an image, following the
-[CSS Images](https://drafts.csswg.org/css-images-4/#color-images)
-specification.
+[CSS Images](https://drafts.csswg.org/css-images-4/#color-images) specification.
 
 ```css
 .box {
-   background: image(red);
+  background: image(red);
 }
 
 /* becomes */
 
 .box {
-   background: linear-gradient(red, red);
+  background: linear-gradient(red, red);
 }
 ```
 
 ## Usage
 
-Add the package in your project:
-
-```sh
-npm install --save-dev postcss postcss-color-image
-```
-
-Use it as a PostCSS plugin
-(see the [instructions](https://github.com/postcss/postcss#usage))
-or directly:
+### Deno
 
 ```js
-const colorImage = require('postcss-color-image');
+import postcss from "https://deno.land/x/postcss@8.3.0/mod.js";
+import colorImage from "https://deno.land/x/postcss_color_image@3.0.0/mod.js";
 
-colorImage.process(YOUR_CSS /*, processOptions, pluginOptions */);
+await postcss([colorImage]).process(YOUR_CSS);
 ```
+
+### Node.js
+
+```sh
+$ npm install postcss-color-image
+```
+
+```js
+import postcss from "postcss";
+import colorImage from "postcss-color-image";
+// OR
+const postcss = require("postcss");
+const colorImage = require("postcss-color-image");
+
+await postcss([colorImage]).process(YOUR_CSS);
+```
+
+## See also
+
+- [deno.land/x](https://deno.land/x/postcss_color_image)
+- [npm registry](https://www.npmjs.com/package/postcss-color-image)
