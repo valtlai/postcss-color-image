@@ -19,6 +19,8 @@ This PostCSS plugin lets you use a solid color as an image, following the
 
 ### Deno
 
+Import the module from [deno.land/x](https://deno.land/x/postcss_color_image):
+
 ```js
 import postcss from "https://deno.land/x/postcss@8.3.0/mod.js";
 import colorImage from "https://deno.land/x/postcss_color_image@3.0.0/mod.js";
@@ -28,9 +30,13 @@ await postcss([colorImage]).process(YOUR_CSS);
 
 ### Node.js
 
+Install the [npm package](https://www.npmjs.com/package/postcss-color-image):
+
 ```sh
-$ npm install postcss-color-image
+npm install postcss-color-image
 ```
+
+Then import or require it:
 
 ```js
 import postcss from "postcss";
@@ -41,8 +47,3 @@ const colorImage = require("postcss-color-image");
 
 await postcss([colorImage]).process(YOUR_CSS);
 ```
-
-## See also
-
-- [deno.land/x](https://deno.land/x/postcss_color_image)
-- [npm registry](https://www.npmjs.com/package/postcss-color-image)
