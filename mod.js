@@ -1,4 +1,6 @@
+// node(postcss-value-parser)
 import parseValue from "https://deno.land/x/postcss_value_parser@v4.1.0/mod.js";
+
 import { colorFunctions, colorWords, hexColorRegex } from "./colors.js";
 
 function isColor(node) {
