@@ -8,6 +8,8 @@ export const colorFunctions = [
   "hwb",
   "lab",
   "lch",
+  "oklab",
+  "oklch",
   "color",
   "device-cmyk",
   "color-mix",
