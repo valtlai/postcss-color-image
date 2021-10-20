@@ -10,6 +10,13 @@ function isColor(node) {
     return hexColorRegex.test(val) || colorWords.includes(val);
   }
   if (node.type === "function") {
+    if (val === "color-adjust") {
+      console.warn(
+        "WARNING: " +
+          "Recognizing color-adjust() as a color value is now deprecated " +
+          "and will be removed in the next major version of postcss-color-image.",
+      );
+    }
     return colorFunctions.includes(val);
   }
   return false;
