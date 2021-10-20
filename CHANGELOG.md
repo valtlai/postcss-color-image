@@ -1,5 +1,10 @@
 # Changelog
 
+## [3.1.0] (2021-10-20)
+- Recognized `oklab()` and `oklch()` as color values
+- Deprecated `color-adjust()`, which was removed from the spec
+  and which will be removed in the next major version of this package
+
 ## [3.0.1] (2021-05-31)
 - Updated readme
 
@@ -28,6 +33,7 @@
 ## [1.0.0] (2020-05-26)
 - Initial release
 
+[3.1.0]: https://github.com/valtlai/postcss-color-image/compare/3.0.1...3.1.0
 [3.0.1]: https://github.com/valtlai/postcss-color-image/compare/3.0.0...3.0.1
 [3.0.0]: https://github.com/valtlai/postcss-color-image/compare/v2.0.2...3.0.0
 [2.0.2]: https://github.com/valtlai/postcss-color-image/compare/v2.0.1...v2.0.2

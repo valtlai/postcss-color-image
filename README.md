@@ -23,7 +23,7 @@ Import the module from [deno.land/x](https://deno.land/x/postcss_color_image):
 
 ```js
 import postcss from "https://deno.land/x/postcss@8.3.10/mod.js";
-import colorImage from "https://deno.land/x/postcss_color_image@3.0.0/mod.js";
+import colorImage from "https://deno.land/x/postcss_color_image@3.1.0/mod.js";
 
 await postcss([colorImage]).process(YOUR_CSS);
 ```
