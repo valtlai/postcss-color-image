@@ -15,7 +15,7 @@ function isColor(node) {
   return false;
 }
 
-function postcssColorImage({ compat = false } = {}) {
+function postcssColorImage({ compat = false, preserve = false } = {}) {
   return {
     postcssPlugin: "postcss-color-image",
     Declaration(decl) {
@@ -44,7 +44,11 @@ function postcssColorImage({ compat = false } = {}) {
         }
       });
 
-      decl.value = val.toString();
+      if (preserve) {
+        decl.cloneBefore({ value: val.toString() });
+      } else {
+        decl.value = val.toString();
+      }
     },
   };
 }

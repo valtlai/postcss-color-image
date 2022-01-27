@@ -60,3 +60,14 @@ duplicate the color in the output gradient for wider browser support.
   background: linear-gradient(red, red);
 }
 ```
+
+### `preserve: true`
+
+Keep the original CSS declaration alongside the transformed one.
+
+```css
+.box {
+  background: linear-gradient(red 0 0);
+  background: image(red);
+}
+```

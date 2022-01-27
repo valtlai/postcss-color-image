@@ -108,3 +108,29 @@ test(
     --z: linear-gradient(hsl(0deg 100% 50%), hsl(0deg 100% 50%)); }`,
   { compat: true },
 );
+
+test(
+  "Keeps original declaration when { preserve: true }",
+  `x {
+    --y: image(red);
+    --z: image(hsl(0deg 100% 50%)); }`,
+  `x {
+    --y: linear-gradient(red 0 0);
+    --y: image(red);
+    --z: linear-gradient(hsl(0deg 100% 50%) 0 0);
+    --z: image(hsl(0deg 100% 50%)); }`,
+  { preserve: true },
+);
+
+test(
+  "Supports both { compat: true, preserve: true } same site",
+  `x {
+    --y: image(red);
+    --z: image(hsl(0deg 100% 50%)); }`,
+  `x {
+    --y: linear-gradient(red, red);
+    --y: image(red);
+    --z: linear-gradient(hsl(0deg 100% 50%), hsl(0deg 100% 50%));
+    --z: image(hsl(0deg 100% 50%)); }`,
+  { compat: true, preserve: true },
+);
