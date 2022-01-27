@@ -39,12 +39,10 @@ test(
   `x {
     --y: image(color-mix(in lch, red, plum 50%));
     --z: image(color-contrast(snow vs gold, cyan, navy to AA));
-    --i: image(color-adjust(tan lightness -20%));
   }`,
   `x {
     --y: linear-gradient(color-mix(in lch, red, plum 50%), color-mix(in lch, red, plum 50%));
     --z: linear-gradient(color-contrast(snow vs gold, cyan, navy to AA), color-contrast(snow vs gold, cyan, navy to AA));
-    --i: linear-gradient(color-adjust(tan lightness -20%), color-adjust(tan lightness -20%));
   }`,
 );
 

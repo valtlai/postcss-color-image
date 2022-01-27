@@ -14,7 +14,6 @@ export const colorFunctions = [
   "device-cmyk",
   "color-mix",
   "color-contrast",
-  "color-adjust",
 ];
 
 export const colorWords = [
