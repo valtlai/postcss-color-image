@@ -15,7 +15,7 @@ function isColor(node) {
   return false;
 }
 
-function postcssColorImage() {
+function postcssColorImage({ compat = false } = {}) {
   return {
     postcssPlugin: "postcss-color-image",
     Declaration(decl) {
@@ -34,7 +34,14 @@ function postcssColorImage() {
         }
 
         node.value = "linear-gradient";
-        node.nodes.push({ type: "div", value: ", " }, node.nodes[0]);
+
+        if (compat) {
+          node.nodes.push({ type: "div", value: ", " }, node.nodes[0]);
+        } else {
+          const sep = { type: "space", value: " " };
+          const pos = { type: "word", value: "0" };
+          node.nodes.push(sep, pos, sep, pos);
+        }
       });
 
       decl.value = val.toString();

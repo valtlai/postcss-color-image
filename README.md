@@ -11,7 +11,7 @@ This PostCSS plugin lets you use a solid color as an image, following the
 /* becomes */
 
 .box {
-  background: linear-gradient(red, red);
+  background: linear-gradient(red 0 0);
 }
 ```
 
@@ -46,4 +46,17 @@ const postcss = require("postcss");
 const colorImage = require("postcss-color-image");
 
 await postcss([colorImage]).process(YOUR_CSS);
+```
+
+## Options
+
+### `compat: true`
+
+Instead of adding a double-position color stop,
+duplicate the color in the output gradient for wider browser support.
+
+```css
+.box {
+  background: linear-gradient(red, red);
+}
 ```
