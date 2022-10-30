@@ -2,7 +2,7 @@
 
 ## [5.0.0] (2022-10-30)
 - BREAKING: Renamed the recognized color `color-contrast()`
-  to `contrast-color()` (csswg-drafts#7557)
+  to `contrast-color()` ([csswg-drafts#7557]([csswg-issue-7557]))
 - BREAKING: Dropped the support for Node.js 12 and 17
   (so Node.js 14, 16, and 18 or greater are now supported)
 
@@ -53,6 +53,7 @@
 ## [1.0.0] (2020-05-26)
 - Initial release
 
+[csswg-issue-7557]: https://github.com/w3c/csswg-drafts/issues/7557
 [5.0.0]: https://github.com/valtlai/postcss-color-image/compare/4.0.0...5.0.0
 [4.0.0]: https://github.com/valtlai/postcss-color-image/compare/3.1.0...4.0.0
 [3.1.0]: https://github.com/valtlai/postcss-color-image/compare/3.0.1...3.1.0
