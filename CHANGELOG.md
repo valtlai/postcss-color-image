@@ -2,7 +2,7 @@
 
 ## [5.0.0] (2022-10-30)
 - BREAKING: Renamed the recognized color `color-contrast()`
-  to `contrast-color()` ([csswg-drafts#7557]([csswg-issue-7557]))
+  to `contrast-color()` ([csswg-drafts#7557][csswg-issue-7557])
 - BREAKING: Dropped the support for Node.js 12 and 17
   (so Node.js 14, 16, and 18 or greater are now supported)
 
