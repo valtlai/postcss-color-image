@@ -1,6 +1,6 @@
 {
 	"name": "postcss-color-image",
-	"version": "4.0.0",
+	"version": "5.0.0",
 	"description": "Use a solid color as an image in CSS",
 	"author": "Valtteri Laitinen <dev@valtlai.fi>",
 	"license": "ISC",

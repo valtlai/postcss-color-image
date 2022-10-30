@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.0.0] (2022-10-30)
+- BREAKING: Renamed the recognized color `color-contrast()`
+  to `contrast-color()` (csswg-drafts#7557)
+- BREAKING: Dropped the support for Node.js 12 and 17
+  (so Node.js 14, 16, and 18 or greater are now supported)
+
 ## [4.0.0] (2022-01-27)
 - BREAKING: Instead of duplicating the color in the output gradient,
   a double-position color stop is now added
@@ -24,10 +30,10 @@
 
 ## [3.0.0] (2021-05-27)
 - BREAKING: Dropped the support for Node.js 10 and 15
-  (so Node.js 12, 14 and 16 or greater are now supported)
+  (so Node.js 12, 14, and 16 or greater are now supported)
 - Added an ESM version for Node.js
 - Added support for Deno&nbsp;🦕
-- Recognized `color-mix()`, `color-contrast()` and `color-adjust()`
+- Recognized `color-mix()`, `color-contrast()`, and `color-adjust()`
   as color values
 
 ## [2.0.2] (2020-10-23)
@@ -47,6 +53,7 @@
 ## [1.0.0] (2020-05-26)
 - Initial release
 
+[5.0.0]: https://github.com/valtlai/postcss-color-image/compare/4.0.0...5.0.0
 [4.0.0]: https://github.com/valtlai/postcss-color-image/compare/3.1.0...4.0.0
 [3.1.0]: https://github.com/valtlai/postcss-color-image/compare/3.0.1...3.1.0
 [3.0.1]: https://github.com/valtlai/postcss-color-image/compare/3.0.0...3.0.1
