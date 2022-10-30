@@ -13,7 +13,7 @@ export const colorFunctions = [
 	'color',
 	'device-cmyk',
 	'color-mix',
-	'color-contrast',
+	'contrast-color',
 ];
 
 export const colorWords = [

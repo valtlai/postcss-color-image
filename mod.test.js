@@ -38,11 +38,11 @@ test(
 	'Supports color modification functions',
 	`x {
 		--y: image(color-mix(in lch, red, plum 50%));
-		--z: image(color-contrast(snow vs gold, cyan, navy to AA));
+		--z: image(contrast-color(snow vs gold, cyan, navy to AA));
 	}`,
 	`x {
 		--y: linear-gradient(color-mix(in lch, red, plum 50%) 0 0);
-		--z: linear-gradient(color-contrast(snow vs gold, cyan, navy to AA) 0 0);
+		--z: linear-gradient(contrast-color(snow vs gold, cyan, navy to AA) 0 0);
 	}`,
 );
 
