@@ -5,13 +5,13 @@ This PostCSS plugin lets you use a solid color as an image, following the
 
 ```css
 .box {
-  background: image(red);
+	background: image(red);
 }
 
 /* becomes */
 
 .box {
-  background: linear-gradient(red 0 0);
+	background: linear-gradient(red 0 0);
 }
 ```
 
@@ -22,8 +22,8 @@ This PostCSS plugin lets you use a solid color as an image, following the
 Import the module from [deno.land/x](https://deno.land/x/postcss_color_image):
 
 ```js
-import postcss from "https://deno.land/x/postcss/mod.js";
-import colorImage from "https://deno.land/x/postcss_color_image@4.0.0/mod.js";
+import postcss from 'https://deno.land/x/postcss/mod.js';
+import colorImage from 'https://deno.land/x/postcss_color_image@4.0.0/mod.js';
 
 await postcss([colorImage]).process(YOUR_CSS);
 ```
@@ -39,11 +39,11 @@ npm install postcss-color-image
 Then import or require it:
 
 ```js
-import postcss from "postcss";
-import colorImage from "postcss-color-image";
+import postcss from 'postcss';
+import colorImage from 'postcss-color-image';
 // OR
-const postcss = require("postcss");
-const colorImage = require("postcss-color-image");
+const postcss = require('postcss');
+const colorImage = require('postcss-color-image');
 
 await postcss([colorImage]).process(YOUR_CSS);
 ```
@@ -57,7 +57,7 @@ duplicate the color in the output gradient for wider browser support.
 
 ```css
 .box {
-  background: linear-gradient(red, red);
+	background: linear-gradient(red, red);
 }
 ```
 
@@ -67,7 +67,7 @@ Keep the original CSS declaration alongside the transformed one.
 
 ```css
 .box {
-  background: linear-gradient(red 0 0);
-  background: image(red);
+	background: linear-gradient(red 0 0);
+	background: image(red);
 }
 ```
