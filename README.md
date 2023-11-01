@@ -1,7 +1,7 @@
 # PostCSS Solid-Color Image [<img src="https://api.postcss.org/logo.svg" alt="PostCSS" width="90" height="90" align="right">](https://github.com/postcss/postcss)
 
 [![deno.land](https://deno.land/badge/postcss_color_image/version)](https://deno.land/x/postcss_color_image)
-[![License](https://img.shields.io/npm/l/postcss-color-image.svg)](https://deno.land/x/postcss_color_image@5.0.1/LICENSE.md?source)
+[![License](https://img.shields.io/npm/l/postcss-color-image.svg)](LICENSE.md)
 
 This PostCSS plugin lets you use a solid color as an image, following the
 [CSS Images](https://drafts.csswg.org/css-images-4/#color-images) specification.
