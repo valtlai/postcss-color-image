@@ -1,6 +1,8 @@
-export const hexColorRegex = /^#(?:[a-f\d]{3,4}|[a-f\d]{6}|[a-f\d]{8})$/;
+'use strict';
 
-export const colorFunctions = [
+module.exports.hexColorRegex = /^#(?:[a-f\d]{3,4}|[a-f\d]{6}|[a-f\d]{8})$/;
+
+module.exports.colorFunctions = [
 	'rgb',
 	'rgba',
 	'hsl',
@@ -16,7 +18,7 @@ export const colorFunctions = [
 	'contrast-color',
 ];
 
-export const colorWords = [
+module.exports.colorWords = [
 	'currentcolor',
 	'transparent',
 

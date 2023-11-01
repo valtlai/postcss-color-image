@@ -1,7 +1,7 @@
-// node(postcss-value-parser)
-import parseValue from 'https://deno.land/x/postcss_value_parser@4.2.0/mod.js';
+'use strict';
 
-import { colorFunctions, colorWords, hexColorRegex } from './colors.js';
+const parseValue = require('postcss-value-parser');
+const { colorFunctions, colorWords, hexColorRegex } = require('./colors.js');
 
 function isColor(node) {
 	const val = node.value.toLowerCase();
@@ -55,4 +55,4 @@ function postcssColorImage({ compat = false, preserve = false } = {}) {
 
 postcssColorImage.postcss = true;
 
-export default postcssColorImage;
+module.exports = postcssColorImage;

@@ -1,25 +1,28 @@
-import { assertEquals } from 'https://deno.land/std@0.161.0/testing/asserts.ts';
-import postcss from 'npm:postcss@8.4.18';
-import plugin from './mod.js';
+import assert from 'node:assert';
+import test from 'node:test';
+import postcss from 'postcss';
+import plugin from './index.js';
 
-function test(name, input, expected, opts = {}) {
-	Deno.test(name, async () => {
-		const result = await postcss([plugin(opts)]).process(input, { from: null });
-		assertEquals(result.css, expected);
-		assertEquals(result.warnings().length, 0);
+function runTest(name, input, expected, options = {}) {
+	test(name, async () => {
+		const result = await postcss([plugin(options)]).process(input, {
+			from: undefined,
+		});
+		assert.equal(result.css, expected);
+		assert.equal(result.warnings().length, 0);
 	});
 }
 
 // Supported values
 
-test(
-	'Supports color keyword',
+runTest(
+	'supports color keyword',
 	'x { --y: image(transparent) }',
 	'x { --y: linear-gradient(transparent 0 0) }',
 );
 
-test(
-	'Supports color functions',
+runTest(
+	'supports color functions',
 	`x {
 		--y: image(rgb(255,0,0));
 		--z: image(hsl(0deg 100% 50% / 0.5));
@@ -32,8 +35,8 @@ test(
 	}`,
 );
 
-test(
-	'Supports color modification functions',
+runTest(
+	'supports color modification functions',
 	`x {
 		--y: image(color-mix(in lch, red, plum 50%));
 		--z: image(contrast-color(snow vs gold, cyan, navy to AA));
@@ -44,8 +47,8 @@ test(
 	}`,
 );
 
-test(
-	'Supports hex colors',
+runTest(
+	'supports hex colors',
 	`x {
 		--y: image(#ddd);
 		--z: image(#ddd8);
@@ -60,8 +63,8 @@ test(
 	}`,
 );
 
-test(
-	'Supports within other tokens',
+runTest(
+	'supports within other tokens',
 	`x {
 		background: green image(orange);
 		background: image(pink), image(blue);
@@ -74,22 +77,22 @@ test(
 	}`,
 );
 
-test(
-	'Supports case-insensitivity',
+runTest(
+	'supports case-insensitivity',
 	'x { --y: image(RGB(255,0,0)); --z: image(LinkText) }',
 	'x { --y: linear-gradient(RGB(255,0,0) 0 0); --z: linear-gradient(LinkText 0 0) }',
 );
 
 // Ignored values
 
-test(
-	'Ignores non-lowercase `image` function',
+runTest(
+	'ignores non-lowercase `image` function',
 	'x { --y: Image(red) }',
 	'x { --y: Image(red) }',
 );
 
-test(
-	'Ignores invalid values',
+runTest(
+	'ignores invalid values',
 	`x { --i: image(notcolor); --j: image(rgb); --k: #22; --f: #55555;
 		--g: image('foo.png'); --e: image(red, blue); }`,
 	`x { --i: image(notcolor); --j: image(rgb); --k: #22; --f: #55555;
@@ -98,8 +101,8 @@ test(
 
 // Options
 
-test(
-	'Duplicates color in output gradient when { compat: true }',
+runTest(
+	'duplicates color in output gradient when { compat: true }',
 	`x { --y: image(red);
 		--z: image(hsl(0deg 100% 50%)); }`,
 	`x { --y: linear-gradient(red, red);
@@ -107,8 +110,8 @@ test(
 	{ compat: true },
 );
 
-test(
-	'Keeps original declaration when { preserve: true }',
+runTest(
+	'keeps original declaration when { preserve: true }',
 	`x {
 		--y: image(red);
 		--z: image(hsl(0deg 100% 50%)); }`,
@@ -120,8 +123,8 @@ test(
 	{ preserve: true },
 );
 
-test(
-	'Supports both { compat: true, preserve: true } same site',
+runTest(
+	'supports both { compat: true, preserve: true } same site',
 	`x {
 		--y: image(red);
 		--z: image(hsl(0deg 100% 50%)); }`,
