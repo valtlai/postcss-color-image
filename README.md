@@ -1,53 +1,38 @@
 # PostCSS Solid-Color Image [<img src="https://api.postcss.org/logo.svg" alt="PostCSS" width="90" height="90" align="right">](https://github.com/postcss/postcss)
 
 [![deno.land](https://deno.land/badge/postcss_color_image/version)](https://deno.land/x/postcss_color_image)
-[![NPM](https://img.shields.io/npm/v/postcss-color-image.svg)](https://www.npmjs.com/package/postcss-color-image)
-[![License](https://img.shields.io/npm/l/postcss-color-image.svg)](LICENSE)
+[![License](https://img.shields.io/npm/l/postcss-color-image.svg)](https://deno.land/x/postcss_color_image@5.0.1/LICENSE.md?source)
 
 This PostCSS plugin lets you use a solid color as an image, following the
 [CSS Images](https://drafts.csswg.org/css-images-4/#color-images) specification.
 
 ```css
 .box {
-	background: image(red);
+  background: image(red);
 }
 
 /* becomes */
 
 .box {
-	background: linear-gradient(red 0 0);
+  background: linear-gradient(red 0 0);
 }
+```
+
+## ❌ Deprecated
+
+The dedicated Deno version of this module is deprecated
+and will not receive any updates anymore.
+Please use the following instead:
+
+```js
+import colorImage from "npm:postcss-color-image@VERSION";
 ```
 
 ## Usage
 
-### Deno
-
-Import the module:
-
 ```js
-import postcss from 'npm:postcss';
-import colorImage from 'https://deno.land/x/postcss_color_image@5.0.0/mod.js';
-
-await postcss([colorImage]).process(YOUR_CSS);
-```
-
-### Node.js
-
-Add the package in your project:
-
-```sh
-npm install postcss-color-image
-```
-
-Then import or require it:
-
-```js
-import postcss from 'postcss';
-import colorImage from 'postcss-color-image';
-// OR
-const postcss = require('postcss');
-const colorImage = require('postcss-color-image');
+import postcss from "npm:postcss";
+import colorImage from "https://deno.land/x/postcss_color_image@5.0.1/mod.js";
 
 await postcss([colorImage]).process(YOUR_CSS);
 ```
@@ -61,7 +46,7 @@ duplicate the color in the output gradient for wider browser support.
 
 ```css
 .box {
-	background: linear-gradient(red, red);
+  background: linear-gradient(red, red);
 }
 ```
 
@@ -71,7 +56,7 @@ Keep the original CSS declaration alongside the transformed one.
 
 ```css
 .box {
-	background: linear-gradient(red 0 0);
-	background: image(red);
+  background: linear-gradient(red 0 0);
+  background: image(red);
 }
 ```
