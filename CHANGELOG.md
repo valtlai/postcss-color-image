@@ -91,4 +91,4 @@ This project uses [semantic versioning](https://semver.org/).
 
 - Initial release
 
-[v1.0.0](https://github.com/valtlai/postcss-color-image/tree/v1.0.0)
+[`v1.0.0`](https://github.com/valtlai/postcss-color-image/tree/v1.0.0)
