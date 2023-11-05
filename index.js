@@ -1,16 +1,16 @@
 'use strict';
 
 const parseValue = require('postcss-value-parser');
-const { colorFunctions, colorWords, hexColorRegex } = require('./colors.js');
+const { colorFunctions, colorWords, hexColorRegExp } = require('./colors.js');
 
 function isColor(node) {
-	const val = node.value.toLowerCase();
+	const value = node.value.toLowerCase();
 
 	if (node.type === 'word') {
-		return hexColorRegex.test(val) || colorWords.includes(val);
+		return hexColorRegExp.test(value) || colorWords.includes(value);
 	}
 	if (node.type === 'function') {
-		return colorFunctions.includes(val);
+		return colorFunctions.includes(value);
 	}
 	return false;
 }
@@ -18,12 +18,15 @@ function isColor(node) {
 function postcssColorImage({ compat = false, preserve = false } = {}) {
 	return {
 		postcssPlugin: 'postcss-color-image',
-		Declaration(decl) {
-			if (!decl.value.includes('image(')) return; // skip useless parsing
+		Declaration(declaration) {
+			// Skip useless parsing
+			if (!declaration.value.includes('image(')) {
+				return;
+			}
 
-			const val = parseValue(decl.value);
+			const value = parseValue(declaration.value);
 
-			val.walk((node) => {
+			value.walk((node) => {
 				if (
 					node.type !== 'function' ||
 					node.value !== 'image' ||
@@ -38,16 +41,16 @@ function postcssColorImage({ compat = false, preserve = false } = {}) {
 				if (compat) {
 					node.nodes.push({ type: 'div', value: ', ' }, node.nodes[0]);
 				} else {
-					const sep = { type: 'space', value: ' ' };
-					const pos = { type: 'word', value: '0' };
-					node.nodes.push(sep, pos, sep, pos);
+					const separator = { type: 'space', value: ' ' };
+					const position = { type: 'word', value: '0' };
+					node.nodes.push(separator, position, separator, position);
 				}
 			});
 
 			if (preserve) {
-				decl.cloneBefore({ value: val.toString() });
+				declaration.cloneBefore({ value: value.toString() });
 			} else {
-				decl.value = val.toString();
+				declaration.value = value.toString();
 			}
 		},
 	};

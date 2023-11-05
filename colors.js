@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports.hexColorRegex = /^#(?:[a-f\d]{3,4}|[a-f\d]{6}|[a-f\d]{8})$/;
+module.exports.hexColorRegExp = /^#(?:[a-f\d]{3,4}|[a-f\d]{6}|[a-f\d]{8})$/;
 
 module.exports.colorFunctions = [
 	'rgb',
