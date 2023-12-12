@@ -2,6 +2,14 @@
 
 This project uses [semantic versioning](https://semver.org/).
 
+## v6.1.0 (2023-12-12)
+
+- Recognized `light-dark()`,
+  `AccentColor`, `AccentColorText`, `SelectedItem`, and `SelectedItemText`
+  as color values
+
+[`v6.0.0...v6.1.0`](https://github.com/valtlai/postcss-color-image/compare/v6.0.0...v6.1.0)
+
 ## v6.0.0 (2023-11-01)
 
 - BREAKING: Dropped support for Node.js 14 and 16,
