@@ -19,7 +19,7 @@
 	},
 	"scripts": {
 		"test": "node --test",
-		"check": "biome check --apply ."
+		"check": "biome check --write ."
 	},
 	"dependencies": {
 		"postcss-value-parser": "^4.2.0"
@@ -28,8 +28,8 @@
 		"postcss": "^8.0.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.4.1",
-		"postcss": "^8.4.32"
+		"@biomejs/biome": "1.8.3",
+		"postcss": "^8.4.39"
 	},
 	"keywords": [
 		"postcss-plugin",
