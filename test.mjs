@@ -79,8 +79,16 @@ runTest(
 
 runTest(
 	'supports case-insensitivity',
-	'x { --y: image(RGB(255,0,0)); --z: image(LinkText) }',
-	'x { --y: linear-gradient(RGB(255,0,0) 0 0); --z: linear-gradient(LinkText 0 0) }',
+	`x {
+		--x: image(#A1B2C3);
+		--y: image(RGB(255,0,0));
+		--z: image(LinkText);
+	}`,
+	`x {
+		--x: linear-gradient(#A1B2C3 0 0);
+		--y: linear-gradient(RGB(255,0,0) 0 0);
+		--z: linear-gradient(LinkText 0 0);
+	}`,
 );
 
 // Ignored values
