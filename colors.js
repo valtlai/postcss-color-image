@@ -10,11 +10,15 @@ export const colorFunctions = [
 	'lch',
 	'oklab',
 	'oklch',
+	'ictcp',
+	'jzazbz',
+	'jzczhz',
 	'color',
 	'device-cmyk',
 	'color-mix',
 	'light-dark',
 	'contrast-color',
+	'color-layers',
 ];
 
 export const colorWords = [
