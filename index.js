@@ -1,7 +1,5 @@
-'use strict';
-
-const parseValue = require('postcss-value-parser');
-const { colorFunctions, colorWords, hexColorRegExp } = require('./colors.js');
+import parseValue from 'postcss-value-parser';
+import { colorFunctions, colorWords, hexColorRegExp } from './colors.js';
 
 function isColor(node) {
 	const value = node.value.toLowerCase();
@@ -58,4 +56,4 @@ function postcssColorImage({ compat = false, preserve = false } = {}) {
 
 postcssColorImage.postcss = true;
 
-module.exports = postcssColorImage;
+export default postcssColorImage;

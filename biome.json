@@ -9,9 +9,6 @@
 			"correctness": {
 				"noUndeclaredVariables": "error",
 				"noUnusedVariables": "error"
-			},
-			"suspicious": {
-				"noRedundantUseStrict": "off"
 			}
 		}
 	}
