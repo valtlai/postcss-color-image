@@ -15,7 +15,7 @@
 	"type": "module",
 	"exports": "./index.js",
 	"engines": {
-		"node": ">=18"
+		"node": "^20.19 || ^22.13 || >=24"
 	},
 	"scripts": {
 		"test": "node --test",
