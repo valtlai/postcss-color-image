@@ -2,6 +2,18 @@
 
 This project uses [semantic versioning](https://semver.org/).
 
+## v7.0.0 (2025-MM-DD)
+
+- BREAKING: Update Node.js version requirement
+	- Drop support for EOL versions
+	  (18, 19, 21, 23)
+	- Only support versions where `require(ESM)` works without warnings
+	  (20.19.x, 22.13.x, or 24 or greater)
+- Recognized `ictcp()`, `jzazbz()`, `jzczhz()`, `alpha()`, and `color-layers()`
+  as color values
+
+[`v6.1.0...v7.0.0`](https://github.com/valtlai/postcss-color-image/compare/v6.1.0...v7.0.0)
+
 ## v6.1.0 (2023-12-12)
 
 - Recognized `light-dark()`,
