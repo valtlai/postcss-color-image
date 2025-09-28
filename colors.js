@@ -13,6 +13,7 @@ export const colorFunctions = [
 	'color',
 	'device-cmyk',
 	'color-mix',
+	'alpha',
 	'light-dark',
 	'contrast-color',
 ];
