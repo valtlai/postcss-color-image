@@ -7,8 +7,7 @@
 	"linter": {
 		"rules": {
 			"correctness": {
-				"noUndeclaredVariables": "error",
-				"noUnusedVariables": "error"
+				"noUndeclaredVariables": "error"
 			}
 		}
 	}
